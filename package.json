@@ -1,0 +1,11 @@
+{
+  "name": "smart-repositor-server",
+  "version": "0.0.1",
+  "description": "Middle server para gestionar datos de productos desde la web de Coto Digital",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Agustin Morales Romero",
+  "license": "MIT"
+}
