@@ -4,6 +4,7 @@
   "description": "Middle server para gestionar datos de productos desde la web de Coto Digital",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucas Agustin Morales Romero",
@@ -11,5 +12,8 @@
   "dependencies": {
     "express": "^4.21.2",
     "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
