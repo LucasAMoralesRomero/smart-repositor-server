@@ -4,7 +4,10 @@ const express = require("express");
 const cors =require("cors");
 const productRoutes = require("./routes/productRoutes");
 //Importamos el array de dominios permitidos
-const { allowedOrigins } = require("./config/constants")
+const { allowedOrigins } = require("./config/constants");
+
+//importamos la funcion para registrar los accesos denegados
+const { logDeniedAccess } = require ("./services/logService");
 
 const app = express();
 const PORT = process.env.PORT || 3000; // Usamos el puerto de Vercel o 3000 por defecto
@@ -16,6 +19,7 @@ app.use(cors({
             callback(null, true);//Permitimos la solicitud
         } else {
         console.error(`CORS bloqueado para el origen: ${origin}`);
+        logDeniedAccess(origin);
         callback(new Error("Acceso denegado por CORS"));//Bloqueamos la solicitud
         }
     },
